@@ -1,0 +1,27 @@
+- name: Gnome | Install DNF packages
+  become: yes
+  when: ansible_distribution == "Fedora"
+  dnf:
+    name:
+      - python3-psutil  # dep for community.general.dconf 
+      - gnome-tweaks
+      - gnome-shell-extension-dash-to-panel
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-blur-my-shell
+    state: present
+
+- name: Gnome | Install Flatpak apps
+  community.general.flatpak:
+    name:
+      - com.mattjakeman.ExtensionManager
+
+- name: Gnome | Tweak 
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop: "{{ lookup('ansible.builtin.dict', gnomeconf) }}"
+
+- name: Gnome | Kb Layouts
+  community.general.dconf:
+    key: "/org/gnome/desktop/input-sources/sources"
+    value: "[('xkb', 'eu'), ('xkb', 'fr+oss')]"

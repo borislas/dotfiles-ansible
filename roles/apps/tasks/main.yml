@@ -1,0 +1,25 @@
+- name: Enable Flathub repo
+  become: yes
+  community.general.flatpak_remote:
+    name: flathub
+    flatpakrepo_url: "https://dl.flathub.org/repo/flathub.flatpakrepo"
+
+- name: Disable Fedora repo
+  become: yes
+  community.general.flatpak_remote:
+    name: 
+    - fedora
+    - fedora-testing
+    state: absent
+  when: ansible_distribution == "Fedora"
+
+- name: Install apps
+  community.general.flatpak:
+    name: 
+    - org.mozilla.firefox
+    - md.obsidian.Obsidian
+    - com.valvesoftware.Steam
+    - com.discordapp.Discord
+    - org.gnome.gThumb
+    - org.darktable.Darktable
+    - org.gimp.GIMP

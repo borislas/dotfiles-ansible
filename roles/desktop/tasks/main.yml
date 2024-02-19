@@ -1,0 +1,3 @@
+- name: Gnome
+  include_tasks: gnome.yml
+  when: desktop == "gnome"

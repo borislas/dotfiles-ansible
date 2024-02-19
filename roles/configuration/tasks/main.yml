@@ -1,0 +1,5 @@
+- name: Clone dotfiles to home directory
+  git:
+    repo: {{ dotfiles_git_repository }}
+    dest: "/home/{{ ansible_user }}/dotfiles"
+    track_submodules: yes
