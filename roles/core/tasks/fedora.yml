@@ -14,6 +14,7 @@
     name:
     - flatpak
     - distrobox
+    - kubernetes-client
     - distribution-gpg-keys
     - mozilla-openh264
     - libavcodec-freeworld
