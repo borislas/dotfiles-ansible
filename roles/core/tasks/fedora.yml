@@ -13,6 +13,7 @@
   dnf:
     name:
     - flatpak
+    - distrobox
     - distribution-gpg-keys
     - mozilla-openh264
     - libavcodec-freeworld
