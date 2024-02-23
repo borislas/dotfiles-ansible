@@ -12,6 +12,7 @@
   become: yes
   dnf:
     name:
+    - alacritty
     - flatpak
     - distrobox
     - kubernetes-client
