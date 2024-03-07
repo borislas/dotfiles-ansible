@@ -23,6 +23,7 @@
     - zsh
     - git
     - tmux
+    - foot
     - neovim
     - stow
     - make
