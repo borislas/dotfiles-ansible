@@ -27,3 +27,4 @@
     - stow
     - make
     - steam-devices
+    - rust-analyzer
