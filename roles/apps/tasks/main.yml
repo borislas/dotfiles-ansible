@@ -16,6 +16,7 @@
 - name: Install apps
   community.general.flatpak:
     name: 
+    - org.gtk.Gtk4theme.Adwaita-dark
     - org.mozilla.firefox
     - md.obsidian.Obsidian
     - com.valvesoftware.Steam
@@ -27,3 +28,9 @@
     - org.remmina.Remmina
     - hu.irl.cameractrls
     - com.moonlight_stream.Moonlight
+
+- name: Force Gtk Adwaita Dark theme
+  become: yes
+  command: flatpak override --env=GTK_THEME=Adwaita-dark
+
+
