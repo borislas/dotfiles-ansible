@@ -12,7 +12,10 @@
   become: yes
   dnf:
     name:
-    - alacritty
+    - @hardware-support
+    - @c-development
+    - @container-management
+    - @fonts
     - flatpak
     - distrobox
     - kubernetes-client
@@ -26,6 +29,9 @@
     - foot
     - neovim
     - stow
-    - make
     - steam-devices
+    - rust 
+    - cargo
     - rust-analyzer
+    - dbus-devel 
+    - pkgconf-pkg-config
