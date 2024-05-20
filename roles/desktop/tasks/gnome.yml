@@ -24,4 +24,4 @@
 - name: Gnome | Kb Layouts
   community.general.dconf:
     key: "/org/gnome/desktop/input-sources/sources"
-    value: "[('xkb', 'eu'), ('xkb', 'fr+oss')]"
+    value: "[('xkb', 'fr+us')]"
