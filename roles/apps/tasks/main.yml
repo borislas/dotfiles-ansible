@@ -16,9 +16,7 @@
 - name: Install apps
   community.general.flatpak:
     name: 
-    - org.gtk.Gtk4theme.Adwaita-dark
     - org.mozilla.firefox
-    - md.obsidian.Obsidian
     - com.valvesoftware.Steam
     - com.discordapp.Discord
     - org.gnome.gThumb
@@ -28,6 +26,13 @@
     - org.remmina.Remmina
     - hu.irl.cameractrls
     - com.moonlight_stream.Moonlight
+    - com.github.maoschanz.drawing
+    - com.github.tchx84.Flatseal
+    - com.github.zocker_160.SyncThingy
+    - com.heroicgameslauncher.hgl
+    - org.signal.signal
+    - com.mattjakeman.ExtensionManager
+    - com.github.maoschanz.drawing
 
 - name: Force Gtk Adwaita Dark theme
   become: yes
