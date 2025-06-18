@@ -1,5 +1,5 @@
 - name: Fedora | Dotfiles | install Chezmoi
-  ansible.builtin.command: sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://codeberg.org/borislas/dotfiles.git
+  ansible.builtin.command: sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply {{ dotfiles_git_repository }}
   become: yes
   args:
     creates: /bin/chezmoi
