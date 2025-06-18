@@ -1,3 +1,6 @@
+- name: Detect GPU type
+  include_tasks: gpufact.yml
+
 - name: Install Fedora base packages
   include_tasks: fedora.yml
   when: ansible_distribution == "Fedora"
