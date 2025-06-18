@@ -3,7 +3,7 @@
   vars:
     dotfiles_git_repository: https://codeberg.org/borislas/dotfiles.git
   roles:
+  - dotfiles
   - core
   - desktop
   - apps
-  #  - configuration
