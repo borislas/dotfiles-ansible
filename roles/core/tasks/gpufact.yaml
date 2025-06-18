@@ -1,0 +1,19 @@
+- name: GPU fact | Exec lspci to find VGA devices
+  ansible.builtin.shell: lspci -k | grep -EA3 'VGA|3D|Display'
+  register: gpu_info
+  changed_when: false
+
+- name: GPU fact | Define blank GPU type
+  ansible.builtin.set_fact:
+    gpu_type: ""
+  when: true # Toujours définir, même si vide
+
+- name: GPU fact | Define gpu_type if NVIDIA found
+  ansible.builtin.set_fact:
+    gpu_type: "nvidia"
+  when: "'NVIDIA' in gpu_info.stdout"
+
+- name: GPU fact | Define gpu_type if AMD found
+  ansible.builtin.set_fact:
+    gpu_type: "amd"
+  when: "('AMD' in gpu_info.stdout or 'ATI' in gpu_info.stdout)"
