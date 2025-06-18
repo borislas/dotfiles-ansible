@@ -2,6 +2,7 @@
   hosts: localhost
   vars:
     dotfiles_git_repository: https://codeberg.org/borislas/dotfiles.git
+    desktop: gnome
   roles:
   - dotfiles
   - core
