@@ -1,7 +1,7 @@
 - name: Bootstrap environment
   hosts: localhost
   vars:
-    dotfiles_git_repository: https://github.com/borislassort/dotfiles.git
+    dotfiles_git_repository: https://github.com/borislas/dotfiles.git
     desktop: gnome
   roles:
   - core
