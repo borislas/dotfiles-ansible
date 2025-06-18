@@ -1,5 +1,5 @@
-- name: Clone dotfiles to home directory
-  git:
-    repo: {{ dotfiles_git_repository }}
-    dest: "/home/{{ ansible_user }}/dotfiles"
-    track_submodules: yes
+- name: Fedora | Dotfiles | install Chezmoi
+  ansible.builtin.command: sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply https://codeberg.org/borislas/dotfiles.git
+  become: yes
+  args:
+    creates: /bin/chezmoi
