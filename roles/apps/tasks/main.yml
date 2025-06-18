@@ -13,7 +13,7 @@
     state: absent
   when: ansible_distribution == "Fedora"
 
-- name: Install apps
+- name: Install flatpak apps
   community.general.flatpak:
     name: 
     - org.mozilla.firefox
@@ -32,6 +32,7 @@
     - org.signal.signal
     - com.mattjakeman.ExtensionManager
     - com.github.maoschanz.drawing
+  when: ansible_distribution != "openSUSE Tumbleweed" # not if rolling distrib
 
 - name: Force Gtk Adwaita Dark theme
   become: yes
