@@ -36,6 +36,24 @@
     - pkgconf-pkg-config
     - ufraw
 
+- name: Fedora | AMD GPU packages
+  become: yes
+  dnf:
+    name:
+    - rocm-opencl 
+    - rocm-clinfo
+    - rocm-device-libs
+    - rocminfo
+  when: gpu_type == "amd"
+
+- name: Fedora | Nvidia GPU packages
+  become: yes
+  dnf:
+    name:
+    - xorg-x11-drv-nvidia-cuda
+    - akmod-nvidia
+  when: gpu_type == "nvidia"
+
 - name: Fedora | Enable raw photos preview with ufraw
   become: yes
   copy:
