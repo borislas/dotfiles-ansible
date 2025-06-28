@@ -4,3 +4,6 @@
 - name: Install Fedora base packages
   include_tasks: fedora.yml
   when: ansible_distribution == "Fedora"
+- name: Install Arch Linux base packages
+  include_tasks: arch.yml
+  when: ansible_distribution == "Arch Linux"

@@ -25,16 +25,13 @@
     - mesa-va-drivers-freeworld
     - zsh
     - git
-    - tmux
     - foot
     - neovim
     - steam-devices
-    - rust 
-    - cargo
-    - rust-analyzer
     - dbus-devel 
     - pkgconf-pkg-config
     - ufraw
+    - pipx
 
 - name: Fedora | AMD GPU packages
   become: yes

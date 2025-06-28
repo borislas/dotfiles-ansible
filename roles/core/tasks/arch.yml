@@ -1,0 +1,50 @@
+- name: Arch | Install packages
+  become: yes
+  pacman: 
+    name:
+    # Core
+    - linux-firmware
+    - ca-certificates
+    - git
+    - libvirt
+    - openh264
+    - pipewire
+    - polkit
+    - ffmpeg
+    - mesa
+    # Tools
+    - btop
+    - neovim
+    - zsh
+    - kitty
+    # k8s
+    - k9s
+    - kubectl
+    - kubectx
+    - krew
+    # Desktop apps
+    - flatpak
+    - otf-font-awesome
+    - ttf-0xproto-nerd
+    - steam
+    - umu-launcher
+    - firefox-i18n-fr
+    - obsidian
+
+- name: Arch | AMD GPU packages
+  become: yes
+  dnf:
+    name:
+    - rocm-opencl-runtime
+    - rocminfo
+    - rocm-device-libs
+  when: gpu_type == "amd"
+
+- name: Arch | Nvidia GPU packages
+  become: yes
+  dnf:
+    name:
+    - nvidia-open
+    - nvidia-utils
+    - cuda
+  when: gpu_type == "nvidia"
